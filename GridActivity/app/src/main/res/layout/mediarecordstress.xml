@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        >
+
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="次数"
+
+            />
+
+
+        <EditText
+            android:id="@+id/media_times"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.01"
+            android:ems="10"
+            android:inputType="number">
+
+
+            <requestFocus />
+        </EditText>
+
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="时长" />
+
+
+        <EditText
+            android:id="@+id/media_delay"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.01"
+            android:ems="10"
+            android:inputType="number" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <Spinner
+            android:id="@+id/_spinner"
+            android:layout_width="128dp"
+            android:layout_height="match_parent"
+            android:entries="@array/chose_data" />
+
+        <Button
+            android:id="@+id/_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="开始" />
+
+        <Button
+            android:id="@+id/_stop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="停止" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/_savePath"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="文件路径:"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="194dp"
+
+            android:listSelector="@android:color/transparent"
+            android:layout_weight="0.77" />
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/media_progress"
+            android:indeterminate="false"
+
+            />
+
+        <TextView
+            android:id="@+id/_result"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+
+            android:background="#ffffff"
+            android:text="结果"
+            android:gravity="center"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_weight="0.20" />
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

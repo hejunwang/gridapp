@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.autotestlab.gridactivity"
+    android:versionCode="1"
+    android:versionName="@string/app_name">
+
+    <!-- <!—摄像头&ndash;&gt; -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- <&#45;&#45;硬件支持&ndash;&gt; -->
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+
+    <!-- <!—音频即声音&ndash;&gt; -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- <!—sd卡写入权限&ndash;&gt; -->
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.CAPTURE_SECURE_VIDEO_OUTPUT" />
+
+    <!-- bluetooth -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <uses-permission-sdk-23 android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_MMS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE" />
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/android_bugreport"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- log日志 -->
+        <service android:name=".LogService" />
+
+        <activity
+            android:name=".QK_AutoTestLab_VedioRecord.VedioRecord"
+            android:label="VedioRecord_Stress"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".QK_AutoTestLab_AudioRecord.AudioRecord"
+            android:label="AudioRecord_Stress"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".QK_AutoTestLab_BT.BTActivity"
+            android:label="BT_Stress"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".QK_AutoTestLab_CameraStress.CameraAct"
+            android:label="Camera_Stress"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".QK_AutoTestLab_WifiStress.WifiStressActivity"
+            android:label="WIFI_Stress"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+
+        <service
+            android:name=".AgentServer"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name=".QK_AutoTestLab_MSG.MsgActivity"
+            android:label="Msg_Stress"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".QK_AutoTestLab_Clock.AlarmActivity"
+            android:label="Alarm_Stress"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+
+        <receiver
+            android:name=".QK_AutoTestLab_MSG.MsgSendBrodcast"
+            android:enabled="true"
+            android:exported="true" />
+        <receiver
+            android:name=".QK_AutoTestLab_MSG.SMSDelivereBroadReceiver"
+            android:enabled="true"
+            android:exported="true" />
+        <receiver
+            android:name=".QK_AutoTestLab_Clock.AlamrReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="yulong.alert.start" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".QK_AutoTestLab_Clock.MusicServer"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".QK_AutoTestLab_Phone.PhoneMainActivity" />
+        <activity
+            android:name=".QK_AutoTestLab_Phone.AnswerCallActivity"
+            android:screenOrientation="portrait" />
+
+        <service
+            android:name=".QK_AutoTestLab_Phone.PhoneService"
+            android:enabled="true"
+            android:exported="true"></service>
+    </application>
+
+</manifest>
